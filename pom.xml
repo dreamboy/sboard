@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.software</groupId>
+	<groupId>org.springapp</groupId>
 	<artifactId>sboard</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>sboard</name>
-	<description>Demo project for Spring Boot</description>
+	<description>s is anything --- board</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -20,7 +20,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>demo.SboardApplication</start-class>
+		<!-- <start-class>demo.SboardApplication</start-class>  --> <!-- 주석. 무엇때문에 필요할까?-->
 		<java.version>1.8</java.version>
 	</properties>
 
