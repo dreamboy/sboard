@@ -1,0 +1,5 @@
+insert into user(userid,name) values ('dreamboy','조형규')
+insert into user(userid,name) values ('tyche','디케')
+insert into user(userid,name) values ('saemi','새미')
+insert into user(userid,name) values ('geric','정보원')
+insert into user(userid,name) values ('lms','사이버학습')
