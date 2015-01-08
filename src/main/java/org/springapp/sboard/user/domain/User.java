@@ -1,5 +1,6 @@
 package org.springapp.sboard.user.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,9 +12,21 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private String userid;
-	private String name;
 	
+	private String userid;
+	
+	@Column(nullable = false) private String name;
+	
+	@Column(unique = true) private String email;
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getUserid() {
 		return userid;
 	}
