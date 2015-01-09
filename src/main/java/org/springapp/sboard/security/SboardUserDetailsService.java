@@ -17,7 +17,7 @@ public class SboardUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
-		User user = repository.findByUserid(username);
+		User user = repository.findByUsername(username);
 		
 		if(user == null) {
 			throw new UsernameNotFoundException(username);

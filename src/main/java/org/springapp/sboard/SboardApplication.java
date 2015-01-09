@@ -13,5 +13,4 @@ public class SboardApplication {
 	public static void main(String [] args) {
 		SpringApplication.run(SboardApplication.class, args);
 	}
-
 }
