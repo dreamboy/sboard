@@ -13,7 +13,14 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private String userid;
+	/*
+	 * 시큐리티와 일관성을 위해 변경.
+	 * 우리나라(한국)은 userid가 일반적이지만
+	 * security를 만든곳 에서는 username이 일반적인듯.
+	 * 로마에 왔으니 일단 로마법대로..
+	 */
+	//
+	private String username;
 	
 	@Column(nullable = false) private String name;
 	
@@ -27,12 +34,12 @@ public class User {
 		this.email = email;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public long getId() {
