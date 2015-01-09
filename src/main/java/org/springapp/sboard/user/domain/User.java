@@ -20,11 +20,21 @@ public class User {
 	 * 로마에 왔으니 일단 로마법대로..
 	 */
 	//
-	private String username;
+	@Column(unique = true) private String username;
+	
+	@Column(nullable = false) private String password;
 	
 	@Column(nullable = false) private String name;
 	
 	@Column(unique = true) private String email;
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 	public String getEmail() {
 		return email;
