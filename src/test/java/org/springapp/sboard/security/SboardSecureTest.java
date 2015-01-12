@@ -45,7 +45,7 @@ public class SboardSecureTest {
 				"http://localhost:" + this.port, HttpMethod.GET, new HttpEntity<Void> (
 						headers), String.class);
 		
-//		assertEquals(HttpStatus.FOUND, entity.getStatusCode());
+		assertEquals(HttpStatus.FOUND, entity.getStatusCode());
 //		assertTrue("Wrong location:\n" + entity.getHeaders(), entity.getHeaders()
 //				.getLocation().toString().endsWith(port + "login"));
 		

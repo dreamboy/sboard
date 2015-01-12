@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+	
+<head>
+	<title>Post : list</title>
+</head>
+<body>
+	<h1 layout:frament="header">Posts : List</h1>
+	<div layout:fragment="content" class="container">
+		<div class="pull-right">
+			<a href="write.html" th:href="@{/(write)}">
+				Write Post
+			</a>
+		</div>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Title</td>
+					<td>Writer</td>
+					<td>Contents</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${posts.empty}">
+					<td colspan="4">
+						No Post
+					</td>
+				</tr>
+				<tr th:each="post : ${posts}">
+					<td th:text="${post.id}">1</td>
+					<td th:text="${post.title}">title</td>
+					<td th:text="${post.writer}">writer</td>
+					<td th:text="${post.contents}">contents</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
