@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+  layout:decorator="layout">
+<head>
+	<title>Post : View</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Post : View</h1>
+	<div layout:fragment="content" class="container">
+		<div class="alert alert-success"
+			th:if="${globalMessage}"
+			th:text="${globalMessage}">
+			
+			Some Success message
+		</div>
+		<div class="pull-right">
+			<a th:href="@{/}" herf="list.html">
+				Post
+			</a>
+		</div>
+		<dl>
+			<dt>제목</dt>
+			<dd id="title"
+				th:text="${post.title}">
+			</dd>
+			<dt>작성자</dt>
+			<dd id="writer"
+				th:text="${post.writer}">
+			</dd>
+			<dt>내용</dt>
+			<dd id="contents"
+				th:text="${post.contents}">
+			</dd>
+		</dl>
+	</div>
+
+</body>
+</html>

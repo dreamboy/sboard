@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+  layout:decorator="layout">
+<head>
+	<title>Post : write</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Post :wirte</h1>
+	<div layout:fragment="content" class="container">
+		<form id="postForm" 
+			th:action="@{'/post/'(form)}"
+			th:object="${post}"
+			action="#" method="post">
+			
+			<div th:if="${#fields.hasErrors('*')}"
+				class="alert alert-error">
+				<p th:each="error : ${#fields.error('*')}"
+					th:text="${error}">
+					Validation error
+				</p>
+			</div>
+			<div class="pull-right">
+				<a th:href="@{/post}" href="list.html">
+					Post
+				</a>
+			</div>
+			<label for="title">제목</label>
+			<input type="text"
+				th:field="*{title}"
+				th:class="${#fields.hasErrors('title')} ? 'field-error'"/>
+				
+			<label for="writer">작성자</label>
+			<input type="text"
+				th:field="*{writer}"
+				th:class="${#fields.hasErrors('writer')} ? 'field-error'"/>
+			
+			<label for="contents">내용</label>
+			<textarea
+				th:field="*{contents}"
+				th:class="${#fields.hasErrors('contents')} ? 'field-error'">
+			</textarea>
+			<div class="form-actions">
+				<input type="submit" value="Write"/>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

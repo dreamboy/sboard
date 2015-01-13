@@ -7,10 +7,10 @@
 	<title>Post : list</title>
 </head>
 <body>
-	<h1 layout:frament="header">Posts : List</h1>
+	<h1 layout:fragment="header">Posts : List</h1>
 	<div layout:fragment="content" class="container">
 		<div class="pull-right">
-			<a href="write.html" th:href="@{/(write)}">
+			<a href="writeForm.html" th:href="@{'/post/'(form)}">
 				Write Post
 			</a>
 		</div>
@@ -33,7 +33,13 @@
 					<td th:text="${post.id}">1</td>
 					<td th:text="${post.title}">title</td>
 					<td th:text="${post.writer}">writer</td>
-					<td th:text="${post.contents}">contents</td>
+					<td>
+						<a href="view.html"
+							th:href="@{'/post/'+${post.id}}"
+							th:text="${post.contents}">
+						contents
+						</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
