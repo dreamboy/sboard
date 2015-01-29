@@ -1,9 +1,12 @@
 package org.springapp.sboard.post.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -18,6 +21,18 @@ public class Post {
 	private String contents;
 	
 	private String writer;
+	
+	@ManyToMany
+	private List<Tag> tags;
+	
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
 
 	public long getId() {
 		return id;

@@ -6,3 +6,5 @@ insert into user(username,password,name,email) values ('lms','password','사이�
 
 insert into post(title,contents,writer) values ('제목1','내용1','글쓴이1')
 insert into post(title,contents,writer) values ('제목2','내용2','글쓴이2')
+
+insert into tag(name) values ('spring app')
