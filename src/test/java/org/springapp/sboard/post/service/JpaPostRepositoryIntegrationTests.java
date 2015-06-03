@@ -31,7 +31,7 @@ public class JpaPostRepositoryIntegrationTests {
 		
 		this.repository.save(post);
 		
-		getPost = this.repository.findOne(post.getId());
+//		getPost = this.repository.findOne(post.getId());
 		
 		assertEquals(post.getTitle(), getPost.getTitle());
 		
